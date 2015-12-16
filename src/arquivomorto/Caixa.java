@@ -5,22 +5,28 @@
  */
 package arquivomorto;
 
-import javax.swing.JOptionPane;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
 
 /**
  *
  * @author Administrador
  */
+
+@Entity
 public class Caixa {
 
+    @Id
     public int idCaixa;
-    public String NomeCaixa;
+    public String conteudoCaixa;
 
-    public Caixa(int idCaixa, String NomeCaixa) {
+    public Caixa(int idCaixa, String conteudoCaixa) {
         this.idCaixa = idCaixa;
-        this.NomeCaixa = NomeCaixa;
+        this.conteudoCaixa = conteudoCaixa;
     }
-
+    
     public Caixa() {
     }
 
@@ -28,16 +34,16 @@ public class Caixa {
         return idCaixa;
     }
 
-    public String getNomeCaixa() {
-        return NomeCaixa;
+    public String getconteudoCaixa() {
+        return conteudoCaixa;
     }
 
     public void setidCaixa(int idCaixa) {
         this.idCaixa = idCaixa;
     }
 
-    public void setNomeCaixa(String NomeCaixa) {
-        this.NomeCaixa = NomeCaixa;
+    public void setconteudoCaixa(String conteudoCaixa) {
+        this.conteudoCaixa = conteudoCaixa;
     }
 
     @Override
