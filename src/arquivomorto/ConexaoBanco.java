@@ -33,7 +33,8 @@ public final class ConexaoBanco {
     public static  Statement conecta() {
         Statement st = null;
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/BancoAM", "postgres", "Contec0332");
+            //Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/BancoAM", "postgres", "Contec0332");
+            Connection conn = DriverManager.getConnection("jdbc:firebirdsql:localhost/3050:C://BancoAM.fdb", "sysdba", "masterkey");
             Statement s = conn.createStatement();
             st = s;
             JOptionPane.showMessageDialog(null, "BANCO CONECTADO COM SUCESSO");
