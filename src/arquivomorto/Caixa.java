@@ -1,12 +1,8 @@
 package arquivomorto;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
-@Entity
 public class Caixa {
 
-    @Id
     private Long Id;
     private String conteudoCaixa;
 

@@ -90,12 +90,19 @@ public class CadastroUsuarios extends javax.swing.JFrame {
 
         jLabel1.setText("Codigo:");
 
+        campoCodigo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+
         jLabel2.setText("Nome do Usuário:");
+
+        campoNomeUsuario.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
         jLabel3.setText("Username:");
 
+        campoNickUsuario.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+
         jLabel4.setText("Senha:");
 
+        campoSenha.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         campoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoSenhaActionPerformed(evt);
@@ -156,36 +163,35 @@ public class CadastroUsuarios extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(campoNomeUsuario)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campoCodigo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotaListaPrimeiro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotaoListaAnterior)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotaoListaProximo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotaoListaUltimo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(campoCodigo))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BotaListaPrimeiro)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(BotaoListaAnterior)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(BotaoListaProximo)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(BotaoListaUltimo))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(campoNickUsuario)
-                                    .addComponent(jLabel4)
-                                    .addComponent(campoSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(botaoCadastrar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(botaoExcluir)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(botaoAtualizar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(botaoCancelar)))
-                            .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3)
+                                .addComponent(campoNickUsuario)
+                                .addComponent(jLabel4)
+                                .addComponent(campoSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botaoCadastrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botaoExcluir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botaoAtualizar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botaoCancelar)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -232,6 +238,7 @@ public class CadastroUsuarios extends javax.swing.JFrame {
         campoNomeUsuario.setText(listaUsuarios.get(0).getNomeUsuario());
         campoNickUsuario.setText(listaUsuarios.get(0).getNickUsuario());
         campoSenha.setText(listaUsuarios.get(0).getSenhaUsuario());
+        posicao = 0;
     }//GEN-LAST:event_BotaListaPrimeiroActionPerformed
 
     private void BotaoListaAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoListaAnteriorActionPerformed
@@ -262,6 +269,7 @@ public class CadastroUsuarios extends javax.swing.JFrame {
         campoNomeUsuario.setText(listaUsuarios.get(listaUsuarios.size() - 1).getNomeUsuario());
         campoNickUsuario.setText(listaUsuarios.get(listaUsuarios.size() - 1).getNickUsuario());
         campoSenha.setText(listaUsuarios.get(listaUsuarios.size() - 1).getSenhaUsuario());
+        posicao = listaUsuarios.size()-1;
     }//GEN-LAST:event_BotaoListaUltimoActionPerformed
 
     private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed

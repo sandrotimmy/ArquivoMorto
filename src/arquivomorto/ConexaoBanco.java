@@ -34,10 +34,9 @@ public final class ConexaoBanco {
         Statement st = null;
         try {
             //Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/BancoAM", "postgres", "Contec0332");
-            Connection conn = DriverManager.getConnection("jdbc:firebirdsql:localhost/3050:C://BancoAM.fdb", "sysdba", "masterkey");
+            Connection conn = DriverManager.getConnection("jdbc:firebirdsql:localhost/3050:C://users/Administrador/Documents/DOCUMENTOS SANDRO/Repositorio GIT/ArquivoMorto/dados/BancoAM.fdb", "sysdba", "masterkey");
             Statement s = conn.createStatement();
             st = s;
-            JOptionPane.showMessageDialog(null, "BANCO CONECTADO COM SUCESSO");
         } catch (SQLException ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(null, ex);

@@ -160,9 +160,7 @@ public class TelaLogin extends javax.swing.JFrame {
             boolean loginCorreto = false;
             new ConexaoBanco();
             this.s = ConexaoBanco.getStatement();
-            s.executeQuery("SELECT * FROM USUARIOS");
-            ResultSet rs = s.getResultSet();
-
+            ResultSet rs = s.executeQuery("SELECT * FROM USUARIOS");
             while (rs.next()) {
                 String nickBanco = rs.getString("NICKUSUARIO");
                 String senhaBanco = rs.getString("SENHAUSUARIO");

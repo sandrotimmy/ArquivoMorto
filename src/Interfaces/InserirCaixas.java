@@ -76,7 +76,6 @@ public class InserirCaixas extends javax.swing.JFrame {
         jLabel2.setText("Código:");
 
         campoCodigo.setEditable(false);
-        campoCodigo.setText("dfgdfgd");
         campoCodigo.setOpaque(false);
 
         jLabel3.setText("Empresa:");
@@ -164,7 +163,7 @@ public class InserirCaixas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoAtualizar)
+                        .addComponent(botaoAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoCancelar)))
                 .addContainerGap())
