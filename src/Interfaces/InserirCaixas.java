@@ -5,7 +5,10 @@
  */
 package Interfaces;
 
+import arquivomorto.ConexaoBanco;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,16 +23,21 @@ public class InserirCaixas extends javax.swing.JFrame {
     /**
      * Creates new form InserirCaixas
      */
+    public Statement s;
     public TelaPrincipal tp;
     public ArrayList listaCaixas;
+
     public InserirCaixas() throws SQLException {
         initComponents();
+        this.s = ConexaoBanco.getStatement();
+
         tp = new TelaPrincipal();
         listaCaixas = new ArrayList();
         campoCodigo.setText(Integer.toString(tp.getEmpresaAtual().getIdEmpresa()));
         campoEmpresa.setText(tp.getEmpresaAtual().getNomeEmpresa());
         campoCodigo.setEditable(false);
         campoEmpresa.setEditable(false);
+        this.carregaTabela();
     }
 
     /**
@@ -200,19 +208,27 @@ public class InserirCaixas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void carregaTabela() throws SQLException {
+        ResultSet rs = s.executeQuery("SELECT * FROM CAIXA WHERE COD_EMPRESA = 01  ORDER BY IDCAIXA");
+                DefaultTableModel val = (DefaultTableModel) tabela.getModel();
+ 
+        while (rs.next()) {
+                       val.addRow(new String[]{rs.getString("IDCAIXA"), rs.getString("CONTEUDOCAIXA")});
+            }
+        
+    }
     private void tabelaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tabelaAncestorAdded
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_tabelaAncestorAdded
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         DefaultTableModel val = (DefaultTableModel) tabela.getModel();
-        val.addRow(new String []{campoCodCaixa.getText(), campoConteudoCaixa.getText()});
+        val.addRow(new String[]{campoCodCaixa.getText(), campoConteudoCaixa.getText()});
         campoCodCaixa.setText("");
         campoConteudoCaixa.setText("");
-               campoConteudoCaixa.requestFocus();
+        campoConteudoCaixa.requestFocus();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
