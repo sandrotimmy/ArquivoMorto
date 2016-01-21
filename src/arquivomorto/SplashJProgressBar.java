@@ -35,7 +35,7 @@ public class SplashJProgressBar extends javax.swing.JWindow {
         jLabelTextoDinamicoPlugins = new JLabel();
         /*** Carregando a imagem do Splash e adicionando a imagem ao componente** jLabelSplashImage**/
         //ImageIcon imageIcon = new javax.swing.ImageIcon(getClass().getResource("/logo.png")); 
-        ImageIcon imageIcon = new ImageIcon(getClass().getResource("logo.png"));
+        ImageIcon imageIcon = new ImageIcon(getClass().getResource("contecPNG.ico"));
         jLabelSplashImage.setIcon(imageIcon);
         /*** Definindo dinamicamente o tamando do container segundo o tamanho da * imagem.**/
         this.setMinimumSize(new java.awt.Dimension(imageIcon.getIconWidth(), imageIcon.getIconHeight()));

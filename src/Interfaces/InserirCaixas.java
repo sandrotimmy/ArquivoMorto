@@ -31,7 +31,7 @@ public class InserirCaixas extends javax.swing.JFrame {
         initComponents();
         this.s = ConexaoBanco.getStatement();
 
-        tp = new TelaPrincipal();
+        tp.getEmpresaAtual().getIdEmpresa();
         listaCaixas = new ArrayList();
         campoCodigo.setText(Integer.toString(tp.getEmpresaAtual().getIdEmpresa()));
         campoEmpresa.setText(tp.getEmpresaAtual().getNomeEmpresa());

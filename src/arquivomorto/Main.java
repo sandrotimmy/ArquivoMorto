@@ -15,21 +15,12 @@ import java.sql.SQLException;
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     * @throws java.lang.ClassNotFoundException
-     * @throws java.lang.InstantiationException
-     * @throws java.lang.IllegalAccessException
-     * @throws javax.swing.UnsupportedLookAndFeelException
-     * @throws java.sql.SQLException
-     */
     public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException, SQLException {
         // TODO code application logic here
         UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-//        ConexaoBanco.conecta();
+
 //        new SplashJProgressBar();
-//        ConexaoBanco.conecta();
         TelaLogin telaLogin = new TelaLogin();
-//        new CadastroCaixa();
+
     }
 }
